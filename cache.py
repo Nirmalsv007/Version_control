@@ -24,8 +24,10 @@ def check(adress,n,cachesize):
 	if adress in cachememory:
 		return 1
 	else:	
-		cachememory.pop(cachesize-1)
-		cachememory.insert(0,getadress(n+1+cachesize))
+		cachememory.pop(0)
+		m=0
+		cachememory.insert(cachesize-1,getadress(cachesize+m))
+		m=m+1
 		return 0
 
 file=open("test.txt","r")
